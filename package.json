@@ -1,23 +1,23 @@
 {
   "name": "svelte-app",
-  "private": false,
+  "private": true,
   "version": "1.0.0",
   "description": "creating an easily shareable base Svelte 3 development environment",
   "author": "Tim Goshinski <tim@code-chimp.com>",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/code-chimp/dev-container-svelte3"
+    "url": "https://github.com/Karakatiza666/dev-container-svelte3"
   },
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "start": "sirv public",
+    "start": "sirv public --no-clear",
     "start:dev": "sirv public --dev",
-    "lint": "eslint \"src/**/*.{js,svelte}\" --quiet",
+    "lint": "eslint \"src/**/*.{js,ts,svelte}\" --quiet",
     "clean": "del-cli public/bundle.*",
-    "format": "prettier \"src/**/*.{js,svelte}\" --write"
+    "format": "prettier \"src/**/*.{js,ts,svelte}\" --write"
   },
   "husky": {
     "hooks": {
@@ -49,12 +49,13 @@
     "prettier": "^2.3.0",
     "prettier-plugin-svelte": "^2.3.0",
     "pretty-quick": "^3.1.0",
-    "rollup": "^2.47.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
     "set-value": ">=4.0.1",
-    "sirv-cli": "^1.0.11",
+    "sirv-cli": "^2.0.0",
     "svelte": "^3.38.2",
     "ws": "^7.4.6"
   }
